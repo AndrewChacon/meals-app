@@ -1,5 +1,5 @@
-import { useGlobalContext } from '../context';
-import { BsHandThumbsUp } from 'react-icons/bs';
+import { useGlobalContext } from '../../context';
+import MealItem from './meal-item.component';
 
 const Meals = () => {
 	const { loading, meals, selectMeal, addToFavorites } = useGlobalContext();
@@ -25,22 +25,13 @@ const Meals = () => {
 				const { idMeal, strMeal: title, strMealThumb: image } = singleMeal;
 
 				return (
-					<article key={idMeal} className='single-meal'>
-						<img
-							src={image}
-							alt=''
-							className='img'
-							onClick={() => selectMeal(idMeal)}
-						/>
-						<footer>
-							<h5>{title}</h5>
-							<button
-								className='like-btn'
-								onClick={() => addToFavorites(idMeal)}>
-								<BsHandThumbsUp />
-							</button>
-						</footer>
-					</article>
+					<MealItem
+						idMeal={idMeal}
+						image={image}
+						selectMeal={selectMeal}
+						addToFavorites={addToFavorites}
+						title={title}
+					/>
 				);
 			})}
 		</section>
