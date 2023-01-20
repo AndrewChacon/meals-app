@@ -2,7 +2,7 @@ import { useGlobalContext } from '../../context';
 import MealItem from './meal-item.component';
 
 const Meals = () => {
-	const { loading, meals, selectMeal, addToFavorites } = useGlobalContext();
+	const { loading, meals, selectMeal } = useGlobalContext();
 	if (loading) {
 		return (
 			<section className='section'>
@@ -29,7 +29,6 @@ const Meals = () => {
 						idMeal={idMeal}
 						image={image}
 						selectMeal={selectMeal}
-						addToFavorites={addToFavorites}
 						title={title}
 					/>
 				);

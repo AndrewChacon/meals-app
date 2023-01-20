@@ -1,8 +1,9 @@
 import React from 'react';
 import { useGlobalContext } from '../../context';
+import FavoritesItem from './favorites-item.component';
 
 const Favorites = () => {
-	const { favorites, removeFromFavorites, selectMeal } = useGlobalContext();
+	const { favorites } = useGlobalContext();
 	return (
 		<section className='favorites'>
 			<div className='favorites-content'>
@@ -10,21 +11,7 @@ const Favorites = () => {
 				<div className='favorites-container'>
 					{favorites.map(item => {
 						const { idMeal, strMealThumb: image } = item;
-						return (
-							<div key={idMeal} className='favorite-item'>
-								<img
-									src={image}
-									alt=''
-									className='favorites-img img'
-									onClick={() => selectMeal(idMeal, true)}
-								/>
-								<button
-									className='remove-btn'
-									onClick={() => removeFromFavorites(idMeal)}>
-									remove
-								</button>
-							</div>
-						);
+						return <FavoritesItem key={idMeal} idMeal={idMeal} image={image} />;
 					})}
 				</div>
 			</div>
