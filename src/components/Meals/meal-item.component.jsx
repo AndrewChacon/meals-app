@@ -1,6 +1,5 @@
-import React from 'react';
-import { BsHandThumbsUp } from 'react-icons/bs';
 import { useGlobalContext } from '../../context';
+import { BsHandThumbsUp } from 'react-icons/bs';
 
 const MealItem = ({ idMeal, image, selectMeal, title }) => {
 	const { addToFavorites } = useGlobalContext();
