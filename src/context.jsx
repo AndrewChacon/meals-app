@@ -99,6 +99,8 @@ const AppProvider = ({ children }) => {
 				favorites,
 				addToFavorites,
 				removeFromFavorites,
+				fetchMeals,
+				allMealsUrl,
 			}}>
 			{children}
 		</AppContext.Provider>
@@ -110,7 +112,3 @@ export const useGlobalContext = () => {
 };
 
 export { AppContext, AppProvider };
-
-// www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
-
-// www.themealdb.com/api/json/v1/1/lookup.php?i=52772

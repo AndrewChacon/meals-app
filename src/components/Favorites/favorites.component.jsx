@@ -1,5 +1,5 @@
 import { useGlobalContext } from '../../context';
-import FavoritesItem from './favorites-item.component';
+import FavoritesContainer from './favorites-container';
 
 const Favorites = () => {
 	const { favorites } = useGlobalContext();
@@ -8,10 +8,7 @@ const Favorites = () => {
 			<div className='favorites-content'>
 				<h5>Favorites</h5>
 				<div className='favorites-container'>
-					{favorites.map(item => {
-						const { idMeal, strMealThumb: image } = item;
-						return <FavoritesItem key={idMeal} idMeal={idMeal} image={image} />;
-					})}
+					<FavoritesContainer favorites={favorites} />
 				</div>
 			</div>
 		</section>

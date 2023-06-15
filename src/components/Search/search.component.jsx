@@ -5,7 +5,8 @@ import SearchInput from './SearchInput/searchinput.component';
 const Search = () => {
 	const [text, setText] = useState('');
 
-	const { setSearchTerm, fetchRandomMeal } = useGlobalContext();
+	const { setSearchTerm, fetchRandomMeal, fetchMeals, allMealsUrl } =
+		useGlobalContext();
 
 	const handleChange = e => {
 		setText(e.target.value);
@@ -13,9 +14,14 @@ const Search = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
+
 		if (text) {
 			setSearchTerm(text);
 			setText('');
+		} else {
+			fetchMeals(allMealsUrl);
+			setText('');
+			setSearchTerm('');
 		}
 	};
 
