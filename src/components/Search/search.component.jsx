@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useGlobalContext } from '../../context';
+import SearchInput from './SearchInput/searchinput.component';
 
 const Search = () => {
 	const [text, setText] = useState('');
@@ -27,13 +28,7 @@ const Search = () => {
 	return (
 		<header className='search-container'>
 			<form onSubmit={handleSubmit} action=''>
-				<input
-					type='text'
-					placeholder='type favorite meal'
-					className='form-input'
-					value={text}
-					onChange={handleChange}
-				/>
+				<SearchInput text={text} handleChange={handleChange} />
 				<button type='submit' className='btn'>
 					search
 				</button>
