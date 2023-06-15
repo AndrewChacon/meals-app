@@ -1,8 +1,8 @@
 import { useGlobalContext } from '../../context';
 import { BsHandThumbsUp } from 'react-icons/bs';
 
-const MealItem = ({ idMeal, image, selectMeal, title }) => {
-	const { addToFavorites } = useGlobalContext();
+const MealItem = ({ idMeal, image, title }) => {
+	const { addToFavorites, selectMeal } = useGlobalContext();
 	return (
 		<article key={idMeal} className='single-meal'>
 			<img

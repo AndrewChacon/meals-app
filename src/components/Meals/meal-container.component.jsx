@@ -2,7 +2,7 @@ import { useGlobalContext } from '../../context';
 import MealItem from './meal-item.component';
 
 const Meals = () => {
-	const { loading, meals, selectMeal } = useGlobalContext();
+	const { loading, meals } = useGlobalContext();
 	if (loading) {
 		return (
 			<section className='section'>
@@ -24,14 +24,7 @@ const Meals = () => {
 			{meals.map(singleMeal => {
 				const { idMeal, strMeal: title, strMealThumb: image } = singleMeal;
 
-				return (
-					<MealItem
-						idMeal={idMeal}
-						image={image}
-						selectMeal={selectMeal}
-						title={title}
-					/>
-				);
+				return <MealItem idMeal={idMeal} image={image} title={title} />;
 			})}
 		</section>
 	);
